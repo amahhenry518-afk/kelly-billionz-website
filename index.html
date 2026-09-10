@@ -489,451 +489,256 @@
         <h2>
             PERSONAL <span>REGISTRATION</span>
         </h2>
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f4f6f8;
+      padding: 20px;
+    }
+
+    .signup-container {
+      width: 100%;
+      max-width: 460px;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+    }
+
+    .signup-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .signup-header h1 {
+      font-size: 30px;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    .signup-header p {
+      color: #6b7280;
+      font-size: 15px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 7px;
+      color: #374151;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 9px;
+      outline: none;
+      font-size: 15px;
+      transition: 0.2s;
+    }
+
+    .form-group input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    .terms {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin: 20px 0;
+      color: #6b7280;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .terms input {
+      margin-top: 3px;
+    }
+
+    .terms a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .signup-btn {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 9px;
+      background: #2563eb;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .signup-btn:hover {
+      background: #1d4ed8;
+    }
+
+    .login-link {
+      text-align: center;
+      margin-top: 22px;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    .login-link a {
+      color: #2563eb;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    @media (max-width: 500px) {
+      .signup-container {
+        padding: 28px 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="signup-container">
+
+    <div class="signup-header">
+      <h1>Create Account</h1>
+      <p>Sign up to get started with your account.</p>
     </div>
 
+    <form id="signupForm">
+
+      <div class="form-group">
+        <label for="fullname">Full Name</label>
+        <input
+          type="text"
+          id="fullname"
+          name="fullname"
+          placeholder="Enter your full name"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="you@example.com"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="Enter your phone number"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Create a password"
+          minlength="8"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          placeholder="Confirm your password"
+          minlength="8"
+          required
+        >
+      </div>
+
+      <div class="terms">
+        <input type="checkbox" id="terms" required>
+
+        <label for="terms">
+          I agree to the
+          <a href="#">Terms & Conditions</a>
+          and
+          <a href="#">Privacy Policy</a>.
+        </label>
+      </div>
+
+      <button type="submit" class="signup-btn">
+        Create Account
+      </button>
+
+    </form>
+
+    <div class="login-link">
+      Already have an account?
+      <a href="login.html">Log in</a>
+    </div>
+
+  </div>
+
+  <script>
+    const form = document.getElementById("signupForm");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const password = document.getElementById("password").value;
+      const confirmPassword =
+        document.getElementById("confirmPassword").value;
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+      }
+
+      alert("Account created successfully!");
+      form.reset();
+    });
+  </script>
 
-    <div class="form-wrapper">
+</body>
+</html>
+```
 
-        <form id="registrationForm" novalidate>
-
-            <!-- PERSONAL INFORMATION -->
-
-            <div class="form-section">
-
-                <div class="form-heading">
-
-                    <span>01</span>
-
-                    <div>
-                        <h3>PERSONAL INFORMATION</h3>
-                        <p>Tell us a little about yourself.</p>
-                    </div>
-
-                </div>
-
-
-                <div class="form-grid">
-
-                    <div class="input-group">
-
-                        <label for="yourName">
-                            Your Name
-                        </label>
-
-                        <input
-                            type="text"
-                            id="yourName"
-                            name="yourName"
-                            placeholder="Enter your name"
-                            autocomplete="name"
-                            required>
-
-                    </div>
-
-
-                    <div class="input-group">
-
-                        <label for="mentor">
-                            Your Mentor
-                        </label>
-
-                        <input
-                            type="text"
-                            id="mentor"
-                            name="mentor"
-                            placeholder="Your mentor's name"
-                            required>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- FIRST PERSON -->
-
-            <div class="form-section">
-
-                <div class="form-heading">
-
-                    <span>02</span>
-
-                    <div>
-                        <h3>1ST PERSON</h3>
-                        <p>Enter the requested details.</p>
-                    </div>
-
-                </div>
-
-
-                <div class="form-grid">
-
-                    <div class="input-group">
-
-                        <label for="person1">
-                            Full Name
-                        </label>
-
-                        <input
-                            type="text"
-                            id="person1"
-                            name="person1"
-                            placeholder="1st person name"
-                            required>
-
-                    </div>
-
-
-                    <div class="input-group">
-
-                        <label for="uid1">
-                            Username
-                        </label>
-
-                        <input
-                            type="text"
-                            id="uid1"
-                            name="uid1"
-                            placeholder="Your username"
-                            required>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- SECOND PERSON -->
-
-            <div class="form-section">
-
-                <div class="form-heading">
-
-                    <span>03</span>
-
-                    <div>
-                        <h3>2ND PERSON</h3>
-                        <p>Enter the requested details.</p>
-                    </div>
-
-                </div>
-
-
-                <div class="form-grid">
-
-                    <div class="input-group">
-
-                        <label for="person2">
-                            Full Name
-                        </label>
-
-                        <input
-                            type="text"
-                            id="person2"
-                            name="person2"
-                            placeholder="2nd person name"
-                            required>
-
-                    </div>
-
-
-                    <div class="input-group">
-
-                        <label for="uid2">
-                            Username
-                        </label>
-
-                        <input
-                            type="text"
-                            id="uid2"
-                            name="uid2"
-                            placeholder="Your username"
-                            required>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- THIRD PERSON -->
-
-            <div class="form-section">
-
-                <div class="form-heading">
-
-                    <span>04</span>
-
-                    <div>
-                        <h3>3RD PERSON</h3>
-                        <p>Enter the requested details.</p>
-                    </div>
-
-                </div>
-
-
-                <div class="form-grid">
-
-                    <div class="input-group">
-
-                        <label for="person3">
-                            Full Name
-                        </label>
-
-                        <input
-                            type="text"
-                            id="person3"
-                            name="person3"
-                            placeholder="3rd person name"
-                            required>
-
-                    </div>
-
-
-                    <div class="input-group">
-
-                        <label for="uid3">
-                            Username
-                        </label>
-
-                        <input
-                            type="text"
-                            id="uid3"
-                            name="uid3"
-                            placeholder="Your username"
-                            required>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- FOURTH PERSON -->
-
-            <div class="form-section">
-
-                <div class="form-heading">
-
-                    <span>05</span>
-
-                    <div>
-                        <h3>4TH PERSON</h3>
-                        <p>Enter the requested details.</p>
-                    </div>
-
-                </div>
-
-
-                <div class="form-grid">
-
-                    <div class="input-group">
-
-                        <label for="person4">
-                            Full Name
-                        </label>
-
-                        <input
-                            type="text"
-                            id="person4"
-                            name="person4"
-                            placeholder="4th person name"
-                            required>
-
-                    </div>
-
-
-                    <div class="input-group">
-
-                        <label for="uid4">
-                            Username
-                        </label>
-
-                        <input
-                            type="text"
-                            id="uid4"
-                            name="uid4"
-                            placeholder="Your username"
-                            required>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- FIFTH PERSON -->
-
-            <div class="form-section">
-
-                <div class="form-heading">
-
-                    <span>06</span>
-
-                    <div>
-                        <h3>5TH PERSON</h3>
-                        <p>Enter the requested details.</p>
-                    </div>
-
-                </div>
-
-
-                <div class="form-grid">
-
-                    <div class="input-group">
-
-                        <label for="person5">
-                            Full Name
-                        </label>
-
-                        <input
-                            type="text"
-                            id="person5"
-                            name="person5"
-                            placeholder="5th person name"
-                            required>
-
-                    </div>
-
-
-                    <div class="input-group">
-
-                        <label for="uid5">
-                            Username
-                        </label>
-
-                        <input
-                            type="text"
-                            id="uid5"
-                            name="uid5"
-                            placeholder="Your username"
-                            required>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- RISK -->
-
-            <div class="form-section">
-
-                <div class="form-heading">
-
-                    <span>07</span>
-
-                    <div>
-                        <h3>
-                            RISK LOW
-                            <small>OPTIONAL</small>
-                        </h3>
-
-                        <p>
-                            Optional information.
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div class="form-grid">
-
-                    <div class="input-group">
-
-                        <label for="risk">
-                            Full Name
-                        </label>
-
-                        <input
-                            type="text"
-                            id="risk"
-                            name="risk"
-                            placeholder="Risk information">
-
-                    </div>
-
-
-                    <div class="input-group">
-
-                        <label for="subUid">
-                            Username
-                        </label>
-
-                        <input
-                            type="text"
-                            id="subUid"
-                            name="subUid"
-                            placeholder="Your username">
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- CONTACT -->
-
-            <div class="form-section">
-
-                <div class="form-heading">
-
-                    <span>08</span>
-
-                    <div>
-                        <h3>CONTACT INFORMATION</h3>
-                        <p>How can we contact you?</p>
-                    </div>
-
-                </div>
-
-
-                <div class="form-grid">
-
-                    <div class="input-group">
-
-                        <label for="email">
-                            Email
-                        </label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="your@email.com"
-                            autocomplete="email"
-                            required>
-
-                    </div>
-
-
-                    <div class="input-group">
-
-                        <label for="phone">
-                            Phone Number
-                        </label>
-
-                        <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            placeholder="+234..."
-                            autocomplete="tel"
-                            required>
-
-                    </div>
-
-                </div>
-
-            </div>
 
 
             <!-- AGREEMENT -->
